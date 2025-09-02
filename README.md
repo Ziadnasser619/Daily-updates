@@ -1,2 +1,0 @@
-# Daily-updates
-ML courses
