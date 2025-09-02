@@ -1,0 +1,90 @@
+
+# Lecture 2 Summary
+
+
+### 1. Image Classification Basics
+
+* **Goal:** Assign an input image to one of many discrete categories (cat, dog, plane…).
+* **Semantic gap:** Images are just pixel arrays (e.g. 800×600×3, RGB values \[0–255]) — but humans perceive objects.
+* **Challenges:**
+
+  * Viewpoint variation (camera angle changes all pixels)
+  * Illumination (lighting changes appearance)
+  * Deformation (object shape flexibility)
+  * Occlusion (object partly hidden)
+  * Background clutter (noisy environment)
+  * Intraclass variation (same class looks very different, e.g. cats vs. kittens)
+
+---
+
+### 2. Data-Driven Approach
+
+* **Traditional approach (edges, corners, hand-crafted rules)** is brittle.
+* **Modern approach:**
+
+  1. Collect dataset (images + labels).
+  2. Train classifier with ML.
+  3. Evaluate on new images.
+
+**Example dataset:** CIFAR-10 (10 classes, 50k train, 10k test, images 32×32×3).
+
+---
+
+### 3. Nearest Neighbor Classifier
+
+* **1-NN:** Store training data. For a test image, find the most similar training image (using distance metric) and copy its label.
+* **Distance metrics:**
+
+  * L1 (Manhattan distance)
+  * L2 (Euclidean distance)
+* **Training vs. Prediction cost:**
+
+  * Training = O(1) (just storing data).
+  * Prediction = O(N) (must compare against all training samples).
+* **Problems:** Too slow for large datasets, distances on raw pixels aren’t meaningful, curse of dimensionality.
+
+---
+
+### 4. K-Nearest Neighbors (KNN)
+
+* Predict label by **majority vote** among K closest neighbors.
+* **Hyperparameters:**
+
+  * Choice of K.
+  * Choice of distance metric.
+* **Tuning hyperparameters:**
+
+  1. BAD: Optimize on training data (overfits).
+  2. BAD: Optimize on test data (no clue for future performance).
+  3. GOOD: Split into **train / validation / test**.
+  4. For small data: **Cross-validation** (k-fold).
+* **Takeaway:** In practice, KNN is rarely used for images (slow, ineffective on raw pixels).
+
+---
+
+### 5. Linear Classifiers
+
+* Move to **parametric models**: define function f(x, W) -> class scores.
+* **Linear score function:**
+
+  * Input image (flattened 32×32×3 = 3072 values).
+  * Parameters W (weights) + b (bias).
+  * Compute:
+
+    $$
+    f(x, W) = W x + b
+    $$
+  * Output: score for each class.
+* **Interpretation:** Each row of W acts as a template/filter for one class.
+* **Limitations:** Can only separate data with linear boundaries -> struggles on complex cases.
+
+---
+
+
+ **Main keywords**
+
+* Image classification = mapping pixels -> labels (hard due to semantic gap + variations).
+* KNN = conceptually simple but impractical for images.
+* Hyperparameters must be tuned with validation sets (never on test).
+* Linear classifiers = first step toward modern deep learning, learn parameters W to map directly from pixels to class scores.
+
