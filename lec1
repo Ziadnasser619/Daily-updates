@@ -1,0 +1,88 @@
+# Lecture 1 Summary
+
+
+### 1. **History of Vision Research**
+
+* **Cambrian Explosion** -> rapid growth of species and visual systems \~540M years ago.
+* **Camera Obscura** (16th–18th century) -> early optical devices.
+* **Neuroscience** (Hubel & Wiesel, 1959):
+
+  * Simple cells -> respond to oriented edges.
+  * Complex cells -> detect movement and orientation.
+  * Hypercomplex cells -> detect edges with endpoints.
+
+---
+
+### 2. **Milestones in Computer Vision**
+
+* **1963 (Larry Roberts)** -> Block world (3D solids).
+* **1970s (David Marr)** -> Visual representation pipeline:
+
+  * Primal sketch -> 2.5D sketch -> 3D model.
+* **1973–79** -> Pictorial structures & generalized cylinders.
+* **1987 (David Lowe)** -> Early object recognition.
+* **1997 (Shi & Malik)** -> Normalized cuts (segmentation).
+* **2001 (Viola-Jones)** -> Real-time face detection.
+* **1999 (SIFT, David Lowe)** -> Keypoint-based recognition.
+* **2005 (HoG – Dalal & Triggs)** -> Human detection.
+* **2006 (Spatial Pyramid Matching)** -> Scene classification.
+* **2009 (DPM – Deformable Part Models)**.
+* **2006–2012 (PASCAL VOC)** -> Standardized benchmarks.
+
+---
+
+### 3. **ImageNet**
+
+* Introduced in **2009**.
+* **14M images**, **22K categories**.
+* Large-scale **ImageNet Classification Challenge (ILSVRC)**:
+
+  * 1,000 classes, 1.4M images.
+* Critical dataset for deep learning revolution.
+
+---
+
+### 4. **Deep Learning Revolution**
+
+* **2012 (AlexNet – Krizhevsky, Sutskever, Hinton)** ->
+
+  * CNN achieved breakthrough in ImageNet.
+  * Used GPUs, deep architecture, ReLUs, dropout.
+* Followed by:
+
+  * **VGGNet, GoogLeNet, ResNet** -> deeper, more efficient CNNs.
+
+---
+
+
+
+### 5. **CNN Basics**
+
+* CNN = hierarchical feature learning:
+
+  * Edges -> textures -> object parts -> full objects.
+* Built from convolution, pooling, fully connected layers.
+* Shift from hand-engineered features (SIFT, HoG) -> learned features via deep networks.
+
+---
+
+### 6. **Beyond Recognition**
+
+* CNNs also apply to:
+
+  * Segmentation.
+  * Tracking.
+  * 3D reconstruction.
+  * Image captioning (CNN + RNN).
+  * Visual reasoning and scene understanding.
+
+---
+
+
+
+
+### 7. **References**
+
+* Foundational works: Hubel & Wiesel (1962), Marr (1982), Lowe (SIFT), Viola-Jones, Dalal & Triggs (HoG), Fei-Fei Li (ImageNet), Krizhevsky et al. (AlexNet), Simonyan & Zisserman (VGG), He et al. (ResNet).
+
+---
