@@ -4,7 +4,7 @@
 
 **Current decision:** Keep the final `underwater_color_correction_final.ipynb` as the best candidate. Color accuracy is not fully solved; end-to-end FPS must be measured on deployment hardware.
 
-| Step | Approach | What happened / why it was insufficient | Decision |
+| Step | Approach | What happened / why it was insufficient | 
 |---|---|---|---|
 | 1. **CLAHE** | Improved contrast, but the cyan/blue cast remained. It changes local contrast, not the overall color balance. | Kept the contrast-enhancement idea; needed a color-correction stage. |
 | 2. **CLAHE + Gamma** | Made the frame brighter, but did not remove the cyan cast. Brightness correction is not white balance. | Rejected as a complete solution; gamma is only useful if brightness is the issue. |
